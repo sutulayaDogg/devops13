@@ -1,0 +1,14 @@
+name: Git Actions devops
+on:
+  push
+jobs:
+    Devops-first-cource
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "my first git action"
+        - name: Show uptime
+          run: uptime
+        - name: Where am I?
+          run: pwd
+        - name: Who am I?
+          run: whoami
