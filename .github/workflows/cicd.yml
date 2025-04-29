@@ -2,7 +2,7 @@ name: LINT-TEST-BUILD-CHECK
 
 on:
   push:
-     branches: [develop]
+    branches: [develop]
 
 jobs:
   lint:
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - run: pip install  -r requirements.txt; pytest --junixtxml=junit/test-results.xml
+      - run: pip install  -r requirements.txt; pytest --junitxml=junit/test-results.xml
 
   build-test:
     needs: [lint, unit-tests]
@@ -32,5 +32,5 @@ jobs:
       - run: sleep 11
       - run: docker ps -a
       - run: sleep 11
-      - run: '127.0.0.1:8000'
+      - run: 'curl 127.0.0.1:8000'
 
