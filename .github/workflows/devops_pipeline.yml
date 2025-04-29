@@ -2,7 +2,7 @@ name: Git Actions devops
 on:
   push
 jobs:
-    Devops-first-cource
+    Devops-first-cource:
       runs-on: ubuntu-latest
       steps:
         - run: echo "my first git action"
